@@ -6,16 +6,23 @@
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
+
 <body>
+
   <div id="app">
     <v-app>
       <v-main>
-        <v-container>
-          <div style="position:absolute;">
-            cool
-          </div>
-          <div id="webgl"></div>
-        </v-container>
+        <div style="position:absolute;">
+          <!-- <v-container>
+            <v-text-field v-model="form.number"/>
+          </v-container> -->
+
+          <v-navigation-drawer>
+            <ace-editor-json v-model="form"></ace-editor-json>
+          </v-navigation-drawer>
+        </div>
+        <div id="webgl"></div>
+        
       </v-main>
     </v-app>
   </div>
