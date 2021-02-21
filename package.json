@@ -1,5 +1,5 @@
 {
-  "name": "webgl-earth",
+  "name": "three-worlds",
   "version": "1.0.0",
   "description": "WebGL Earth experiment ======================",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/turban/webgl-earth.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jelle",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/turban/webgl-earth/issues"

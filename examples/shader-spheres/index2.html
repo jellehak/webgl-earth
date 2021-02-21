@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            margin: 0px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/103/three.min.js"></script> -->
+
+    <script type="module">
+        import * as THREE from 'https://unpkg.com/three@0.125.0/build/three.module.js'
+        // export { OrbitControls } from 'https://unpkg.com/three@0.125.0/examples/jsm/controls/OrbitControls.js'
+        import { createViewer } from '../../js/index.js'
+
+        const { camera, scene, renderer } = createViewer({ el: 'container' })
+
+        var container;
+        // var camera, scene, renderer;
+        var uniforms, material, mesh;
+        var mouseX = 0, mouseY = 0,
+            lat = 0, lon = 0, phy = 0, theta = 0;
+
+        var windowHalfX = window.innerWidth / 2;
+        var windowHalfY = window.innerHeight / 2;
+
+        createShader();
+
+        const axesHelper = new THREE.AxesHelper(5)
+        scene.add(axesHelper)
+
+        function createShader() {
+            // container = document.getElementById('container');
+            // camera = new THREE.Camera();
+            // camera.position.z = 1;
+            // scene = new THREE.Scene();
+
+            const uniforms = {
+                colorB: { type: 'vec3', value: new THREE.Color(0xACB6E5) },
+                colorA: { type: 'vec3', value: new THREE.Color(0x74ebd5) }
+            }
+
+
+            // https://dev.to/maniflames/creating-a-custom-shader-in-threejs-3bhi
+            material = new THREE.ShaderMaterial({
+                uniforms,
+                vertexShader: `
+        varying vec3 vUv; 
+
+        void main() {
+        vUv = position; 
+
+        vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
+        gl_Position = projectionMatrix * modelViewPosition; 
+        }
+        `,
+                fragmentShader: `
+        uniform vec3 colorA; 
+      uniform vec3 colorB; 
+      varying vec3 vUv;
+
+      void main() {
+        gl_FragColor = vec4(mix(colorA, colorB, vUv.z), 1.0);
+      }
+        `,
+      side: THREE.DoubleSide
+            });
+
+            mesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material);
+            scene.add(mesh);
+
+            // renderer = new THREE.WebGLRenderer();
+            // renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1);
+            // container.appendChild(renderer.domElement);
+
+            // uniforms.resolution.value.x = window.innerWidth;
+            // uniforms.resolution.value.y = window.innerHeight;
+            // renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // var startTime = Date.now();
+        // function animate() {
+        //     requestAnimationFrame(animate);
+        //     render();
+        // }
+        // function render() {
+        //     var elapsedMilliseconds = Date.now() - startTime;
+        //     var elapsedSeconds = elapsedMilliseconds / 1000.;
+        //     uniforms.time.value = 60. * elapsedSeconds;
+        //     renderer.render(scene, camera);
+        // }
+        // animate();
+
+    </script>
+</body>
+
+</html>

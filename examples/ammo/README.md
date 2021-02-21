@@ -1,0 +1,1 @@
+Based on https://github.com/mrdoob/three.js/blob/master/examples/physics_ammo_terrain.html

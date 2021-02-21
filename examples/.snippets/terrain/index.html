@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+
+  <div id="app">
+    <v-app>
+      <v-main>
+        <v-navigation-drawer app permanent>
+          <!-- {{form}} -->
+          <div v-if="form.types">
+            <div>
+              {{form.waterHeight}}
+              <v-slider label="waterHeight" thumb-label v-model="form.waterHeight" min="0" max="50" step="0.25"></v-slider>
+            </div>
+            <div>
+              {{form.bumpScale}}
+              <v-slider label="bumpScale" thumb-label v-model="form.bumpScale" min="0" max="300" step="1"></v-slider>
+            </div>
+          </div>
+        </v-navigation-drawer>
+        
+        <div id="webgl"></div>
+        
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.js"></script>
+  <script type="module" src="app.js"></script>  
+</body>
+</html>

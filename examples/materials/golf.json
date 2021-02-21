@@ -1,0 +1,102 @@
+{
+    "metadata": {
+        "version": 4.5,
+        "type": "Material",
+        "generator": "Material.toJSON"
+    },
+    "uuid": "5FEBD1D9-A76F-435E-9E3A-5EE8157F573D",
+    "type": "MeshPhysicalMaterial",
+    "name": "golf",
+    "color": 16777215,
+    "roughness": 0.1,
+    "metalness": 0,
+    "emissive": 0,
+    "clearcoat": 1,
+    "clearcoatRoughness": 0,
+    "clearcoatNormalMap": "B6D219E5-B0FA-477A-9F78-11B09E298205",
+    "clearcoatNormalScale": [
+        2,
+        -2
+    ],
+    "normalMap": "A718B4DA-1EA8-4247-89EB-9079F1AF53C7",
+    "normalMapType": 0,
+    "normalScale": [
+        1,
+        1
+    ],
+    "depthFunc": 3,
+    "depthTest": true,
+    "depthWrite": true,
+    "stencilWrite": false,
+    "stencilWriteMask": 255,
+    "stencilFunc": 519,
+    "stencilRef": 0,
+    "stencilFuncMask": 255,
+    "stencilFail": 7680,
+    "stencilZFail": 7680,
+    "stencilZPass": 7680,
+    "textures": [
+        {
+            "uuid": "B6D219E5-B0FA-477A-9F78-11B09E298205",
+            "name": "",
+            "mapping": 300,
+            "repeat": [
+                1,
+                1
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "center": [
+                0,
+                0
+            ],
+            "rotation": 0,
+            "wrap": [
+                1001,
+                1001
+            ],
+            "format": 1023,
+            "type": 1009,
+            "encoding": 3000,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "anisotropy": 1,
+            "flipY": true,
+            "premultiplyAlpha": false,
+            "unpackAlignment": 4
+        },
+        {
+            "uuid": "A718B4DA-1EA8-4247-89EB-9079F1AF53C7",
+            "name": "",
+            "mapping": 300,
+            "repeat": [
+                1,
+                1
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "center": [
+                0,
+                0
+            ],
+            "rotation": 0,
+            "wrap": [
+                1001,
+                1001
+            ],
+            "format": 1023,
+            "type": 1009,
+            "encoding": 3000,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "anisotropy": 1,
+            "flipY": true,
+            "premultiplyAlpha": false,
+            "unpackAlignment": 4
+        }
+    ]
+}
